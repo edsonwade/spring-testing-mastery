@@ -6,12 +6,16 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.5.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from a repository -->
     </parent>
     <groupId>code.with.vanilson</groupId>
     <artifactId>coffeeservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>coffeeservice</name>
+    <modules>
+        <module>spring-transaction</module>
+    </modules>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -88,6 +92,17 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>code.with.vanilson</groupId>
+                <artifactId>spring-transaction</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
 
     <build>
         <plugins>
