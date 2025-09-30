@@ -1,0 +1,58 @@
+HELP.md
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.env
+*.env
+/.env
+/logs/archived/
+
+# Ignore specific markdown files
+DDD-Architecture-Structure-and-Standard-for-Software-Development.md
+REQUIREMENTS.md
+Systems_Library_Management_Project_Timeline.md
+LIBRARIAN_REQUEST.md
+PLAN.md
+USER_STORIES.md
+execute.sh
+
+# Ignore dot-prefixed versions
+.DDD-Architecture-Structure-and-Standard-for-Software-Development.md
+.REQUIREMENTS.md
+.Systems_Library_Management_Project_Timeline.md
+.LIBRARIAN_REQUEST.md
+.PLAN.md
+
+
+
+
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
