@@ -37,7 +37,7 @@ public class CoffeeRepositoryTest {
      */
     private final List<Coffee> testCoffees = Arrays.asList(
             new Coffee("Coffee 1", 1),
-//            new Coffee("Coffee 2", 1),
+            new Coffee("Coffee 2", 1),
             new Coffee("Coffee 3", 1));
 
     @BeforeEach
@@ -48,7 +48,7 @@ public class CoffeeRepositoryTest {
             entityManager.persist(coffee);
 
             // Add the generated ID to our list of coffee IDs
-            coffeeIds.add((Long)entityManager.getId(coffee));
+            coffeeIds.add((Long) entityManager.getId(coffee));
         });
 
         // Flush the persisted entities to the database
@@ -139,7 +139,7 @@ public class CoffeeRepositoryTest {
         List<Coffee> coffeeList = coffeeRepository.findAll();
 
         // Validate that we found 3 coffees
-        assertEquals(2, coffeeList.size());
+        assertEquals(3, coffeeList.size());
     }
 
     @Test
@@ -156,13 +156,13 @@ public class CoffeeRepositoryTest {
         assertFalse(notFoundCoffee.isPresent());
     }
 
-//    @Test
-//    void testFindCoffeeByName() {
-//        List<Coffee> found = coffeeRepository.findByName("Coffee 2");
-//        assertEquals(1, found.size(), "Expected to find one Coffee");
-//
-//        Coffee foundCoffee = found.get(0);
-//        assertEquals("Coffee 2", foundCoffee.getName());
-//        assertEquals(1, foundCoffee.getVersion());
-//    }
+    @Test
+    void testFindCoffeeByName() {
+        List<Coffee> found = coffeeRepository.findByName("Coffee 2");
+        assertEquals(1, found.size(), "Expected to find one Coffee");
+
+        Coffee foundCoffee = found.get(0);
+        assertEquals("Coffee 2", foundCoffee.getName());
+        assertEquals(1, foundCoffee.getVersion());
+    }
 }
