@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.Objects;
+
 @Entity
 public class Coffee {
     @Id
@@ -47,5 +49,31 @@ public class Coffee {
 
     public void setVersion(int version) {
         this.version = version;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {return false;}
+
+        Coffee coffee = (Coffee) o;
+        return version == coffee.version && Objects.equals(id, coffee.id) &&
+                Objects.equals(name, coffee.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(id);
+        result = 31 * result + Objects.hashCode(name);
+        result = 31 * result + version;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Coffee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", version=" + version +
+                '}';
     }
 }
