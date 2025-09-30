@@ -94,6 +94,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+
+                <configuration>
+                    <mainClass>code.with.vanilson.CoffeeServiceApplication</mainClass>
+                </configuration>
+
             </plugin>
 
             <plugin>
