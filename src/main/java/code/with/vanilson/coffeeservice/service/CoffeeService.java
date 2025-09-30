@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CoffeeService {
-    @Autowired
-    private CoffeeRepository coffeeRepository;
+
+    private final CoffeeRepository coffeeRepository;
+
+    public CoffeeService(CoffeeRepository coffeeRepository) {this.coffeeRepository = coffeeRepository;}
 
     public List<Coffee> findAll() {
         return coffeeRepository.findAll();

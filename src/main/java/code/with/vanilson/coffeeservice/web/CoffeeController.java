@@ -22,8 +22,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CoffeeController {
-    @Autowired
-    private CoffeeService coffeeService;
+
+    private final CoffeeService coffeeService;
+
+    public CoffeeController(CoffeeService coffeeService) {this.coffeeService = coffeeService;}
 
     @GetMapping("/coffee/{id}")
     public ResponseEntity<?> getCoffee(@PathVariable Long id) {
@@ -43,8 +45,8 @@ public class CoffeeController {
     }
 
     @GetMapping("/coffees")
-    public List<Coffee> getCoffees() {
-        return coffeeService.findAll();
+    public ResponseEntity<List<Coffee>> getCoffees() {
+        return ResponseEntity.ok().body(coffeeService.findAll());
     }
 
     @PostMapping("/coffee")

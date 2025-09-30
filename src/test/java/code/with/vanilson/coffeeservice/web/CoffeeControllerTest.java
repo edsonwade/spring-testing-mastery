@@ -42,7 +42,7 @@ public class CoffeeControllerTest {
         coffee.setId(1L);
         coffee.setVersion(1);
 
-        // Setup our mock service to return the Coffee object
+        // Set up our mock service to return the Coffee object
         when(coffeeService.findById(1L)).thenReturn(Optional.of(coffee));
 
         // Invoke GET /coffee/1
