@@ -1,10 +1,9 @@
-package code.with.vanilson.services;
+package code.with.vanilson.springtx.services;
 
 
 import code.with.vanilson.springtx.SpringtxApplication;
 import code.with.vanilson.springtx.models.Account;
 import code.with.vanilson.springtx.repositories.AccountRepository;
-import code.with.vanilson.springtx.services.AccountService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
