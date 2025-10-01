@@ -52,7 +52,7 @@ class AccountServiceTest {
         
         // Transfer $200 from savings to checking
         try {
-            accountService.transfer("savings", "checking", new BigDecimal("200.00"), "Test transfer");
+            accountService.transferProgrammatic("savings", "checking", new BigDecimal("200.00"), "Test transfer");
             transferSucceeded = true;
         } catch (RuntimeException e) {
             System.out.println("Transfer failed");
