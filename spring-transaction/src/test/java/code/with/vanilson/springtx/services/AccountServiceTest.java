@@ -1,10 +1,9 @@
-package code.with.vanilson.services;
+package code.with.vanilson.springtx.services;
 
 
 import code.with.vanilson.springtx.SpringtxApplication;
 import code.with.vanilson.springtx.models.Account;
 import code.with.vanilson.springtx.repositories.AccountRepository;
-import code.with.vanilson.springtx.services.AccountService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +52,7 @@ class AccountServiceTest {
         
         // Transfer $200 from savings to checking
         try {
-            accountService.transfer("savings", "checking", new BigDecimal("200.00"), "Test transfer");
+            accountService.transferProgrammatic("savings", "checking", new BigDecimal("200.00"), "Test transfer");
             transferSucceeded = true;
         } catch (RuntimeException e) {
             System.out.println("Transfer failed");
