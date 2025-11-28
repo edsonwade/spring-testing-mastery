@@ -19,8 +19,9 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="medical-service-one" />
-        <module name="medical-service-three" />
         <module name="medical-service-two" />
+        <module name="medical-service-final" />
+        <module name="medical-service-three" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
@@ -30,6 +31,7 @@
       <module name="coffee-service" options="-parameters -parameters" />
       <module name="marketing" options="-parameters -parameters" />
       <module name="medical-service" options="-parameters -parameters" />
+      <module name="medical-service-final" options="-parameters -parameters" />
       <module name="medical-service-one" options="-parameters -parameters" />
       <module name="medical-service-three" options="-parameters -parameters" />
       <module name="medical-service-two" options="-parameters -parameters" />
