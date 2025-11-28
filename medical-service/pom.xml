@@ -13,6 +13,7 @@
     <modules>
         <module>medical-service-one</module>
         <module>medical-service-two</module>
+        <module>medical-service-three</module>
     </modules>
 
 

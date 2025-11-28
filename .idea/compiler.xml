@@ -16,10 +16,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="medical-service-one" />
+        <module name="medical-service-three" />
         <module name="medical-service-two" />
       </profile>
     </annotationProcessing>
@@ -31,6 +31,7 @@
       <module name="marketing" options="-parameters -parameters" />
       <module name="medical-service" options="-parameters -parameters" />
       <module name="medical-service-one" options="-parameters -parameters" />
+      <module name="medical-service-three" options="-parameters -parameters" />
       <module name="medical-service-two" options="-parameters -parameters" />
       <module name="shop-service" options="-parameters -parameters" />
       <module name="spring-transaction" options="-parameters -parameters" />
