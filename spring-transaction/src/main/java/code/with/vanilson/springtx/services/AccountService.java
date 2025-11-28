@@ -2,9 +2,6 @@ package code.with.vanilson.springtx.services;
 
 import code.with.vanilson.springtx.models.Account;
 import code.with.vanilson.springtx.repositories.AccountRepository;
-import jakarta.transaction.Transaction;
-import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
 

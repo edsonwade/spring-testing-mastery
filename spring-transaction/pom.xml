@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>code.with.vanilson</groupId>
-        <artifactId>coffeeservice</artifactId>
+        <artifactId>marketing</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
