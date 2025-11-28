@@ -12,6 +12,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>medical-service-one</module>
+        <module>medical-service-two</module>
     </modules>
 
 
