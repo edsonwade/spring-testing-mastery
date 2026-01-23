@@ -1,4 +1,4 @@
-name: Kafka streams CI
+name: Microservices CI
 
 on:
   push:
@@ -23,16 +23,16 @@ jobs:
           distribution: 'adopt'
 
       - name: Build and test root project
-        run: mvn clean install
+        run: mvn -B verify
+
 
       ## cache the maven repository
       - name: Cache Maven packages
         uses: actions/cache@v3
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}-${{ github.run_id }}
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
-            ${{ runner.os }}-maven-${{ github.run_id }}
             ${{ runner.os }}-maven-
 
   

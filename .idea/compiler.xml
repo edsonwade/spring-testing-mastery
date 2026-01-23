@@ -2,18 +2,42 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="shop-service" />
+        <module name="coffee-service" />
         <module name="spring-transaction" />
+        <module name="reactive-systems" />
+      </profile>
+      <profile name="Annotation profile for marketing" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="medical-service-one" />
+        <module name="medical-service-two" />
+        <module name="medical-service-final" />
+        <module name="medical-service-three" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="coffeeservice" options="-parameters -parameters" />
+      <module name="coffee-service" options="-parameters -parameters" />
+      <module name="marketing" options="-parameters -parameters" />
+      <module name="medical-service" options="-parameters -parameters" />
+      <module name="medical-service-final" options="-parameters -parameters" />
+      <module name="medical-service-one" options="-parameters -parameters" />
+      <module name="medical-service-three" options="-parameters -parameters" />
+      <module name="medical-service-two" options="-parameters -parameters" />
+      <module name="reactive-systems" options="-parameters" />
+      <module name="shop-service" options="-parameters -parameters" />
       <module name="spring-transaction" options="-parameters -parameters" />
     </option>
   </component>

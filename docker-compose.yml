@@ -1,0 +1,100 @@
+version: "3.9"
+services:
+  app:
+    container_name: saas-app
+    build:
+      context: ./shop-service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-dev
+      - redis
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-dev:5432/saas_dev
+      SPRING_DATASOURCE_USERNAME: devuser
+      SPRING_DATASOURCE_PASSWORD: devpass
+      SPRING_REDIS_HOST: redis
+
+    env_file:
+      - dev.env
+
+    networks:
+      - saas-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  postgres-dev:
+    container_name: saas-postgres-dev
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: saas_dev
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpass
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata-dev:/var/lib/postgresql/data
+    networks:
+      - saas-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U devuser" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  postgres-prod:
+    container_name: saas-postgres-prod
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: saas_prod
+      POSTGRES_USER: produser
+      POSTGRES_PASSWORD: prodpass
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata-prod:/var/lib/postgresql/data
+    networks:
+      - saas-network
+
+  redis:
+    container_name: saas-redis
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - saas-network
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  prometheus:
+    container_name: saas-prometheus
+    image: prom/prometheus:latest
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - saas-network
+
+  grafana:
+    container_name: saas-grafana
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - saas-network
+
+networks:
+  saas-network:
+    driver: bridge
+
+volumes:
+  pgdata-dev:
+  pgdata-prod:
