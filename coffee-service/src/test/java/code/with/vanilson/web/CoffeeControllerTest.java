@@ -18,6 +18,13 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/**
+ * Web Layer tests for {@link CoffeeController}.
+ * Uses MockMvc to test endpoints in isolation.
+ *
+ * @author vanilson
+ * @version 1.0
+ */
 @SuppressWarnings("all")
 @WebMvcTest(CoffeeController.class)
 public class CoffeeControllerTest {
@@ -27,6 +34,11 @@ public class CoffeeControllerTest {
     @MockitoBean
     private CoffeeService coffeeService;
 
+    /**
+     * Test successful retrieval of a coffee by ID.
+     *
+     * @throws Exception if any error occurs during the request
+     */
     @Test
     public void testGetCoffeeById() throws Exception {
         // Create a Coffee object
@@ -54,6 +66,11 @@ public class CoffeeControllerTest {
                 .andExpect(jsonPath("$.version").value(1));
     }
 
+    /**
+     * Test retrieval of a coffee by ID when the coffee does not exist.
+     *
+     * @throws Exception if any error occurs during the request
+     */
     @Test
     public void testGetCoffeeByIdNotFound() throws Exception {
         // Setup our mock service to return an Optional empty

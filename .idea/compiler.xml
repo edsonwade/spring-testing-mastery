@@ -10,6 +10,7 @@
         <module name="shop-service" />
         <module name="coffee-service" />
         <module name="spring-transaction" />
+        <module name="reactive-systems" />
       </profile>
       <profile name="Annotation profile for marketing" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -35,6 +36,7 @@
       <module name="medical-service-one" options="-parameters -parameters" />
       <module name="medical-service-three" options="-parameters -parameters" />
       <module name="medical-service-two" options="-parameters -parameters" />
+      <module name="reactive-systems" options="-parameters" />
       <module name="shop-service" options="-parameters -parameters" />
       <module name="spring-transaction" options="-parameters -parameters" />
     </option>

@@ -2,6 +2,7 @@ package code.with.vanilson.web;
 
 import code.with.vanilson.model.Coffee;
 import code.with.vanilson.service.CoffeeService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,7 +42,7 @@ public class CoffeeController {
     }
 
     @PostMapping("/coffee")
-    public ResponseEntity<Coffee> createCoffee(@RequestBody Coffee coffee) {
+    public ResponseEntity<Coffee> createCoffee(@Valid @RequestBody Coffee coffee) {
         Coffee newCoffee = coffeeService.create(coffee);
         try {
             return ResponseEntity
@@ -54,7 +55,7 @@ public class CoffeeController {
     }
 
     @PutMapping("/coffee/{id}")
-    public ResponseEntity<?> updateCoffee(@RequestBody Coffee coffee,
+    public ResponseEntity<?> updateCoffee(@Valid @RequestBody Coffee coffee,
                                           @PathVariable Long id,
                                           @RequestHeader("If-Match") Integer ifMatch) {
         Optional<Coffee> existingCoffee = coffeeService.findById(id);

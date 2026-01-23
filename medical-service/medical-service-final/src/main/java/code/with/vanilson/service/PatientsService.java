@@ -19,9 +19,10 @@ public class PatientsService {
     private PatientsRepository patientsRepository;
 
     public List<PatientResponse> getAllPatients() {
-        return patientsRepository.findAll().stream()
+        return patientsRepository.findAll()
+                .stream()
                 .map(PatientResponse::fromEntity)
-                .collect(toList());
+                .toList();
     }
 
     public PatientResponse getPatientById(Long id) {

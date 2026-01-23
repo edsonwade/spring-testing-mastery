@@ -1,0 +1,40 @@
+<Utente>
+    <Identificacao>select ;20103008817; NICS,;JOÃO JOSÉ CRUZ RIBEIRO; nome_completo,;1977-04-25;
+        data_DataNascimento,;M; sexo,;PT; PaisNaturali
+        dade,;01; DistritoNaturalidade,;0103; ConcelhoNaturalidade,;010310;
+        FreguesiaNaturalidade,;PT; PaisNacionalidade,;B; TipoDocumentoIdentificacao,;
+        10983443; NumeroDocumentoIdentificacao,;164359184; NIF,;289611923; NumeroSNS,;S;
+        CartaoCidadao,;2; CodigoSituacaoProfissao,;463701; NumeroOperaci
+        onal,;2025-11-24T00:00:00; DataInscricao,;N; Obito,;2; TipoInscricao,;11;
+        TipoUtente,;36180; medicoFam,;RUI FERNANDES; nomeMedicoFam,;2
+        061397; CentroSaude, ;2025-11-24T00:00:00; DataInicioInscricao,;4637;
+        NumeroProcesso,NULL MorFamTipoRua,NULL MorFamRua,NULL MorFamPorta,NULL MorFamAndar,;Alhadas; Mo
+        rFamLugar,;3090; MorFamCodPost, ;401; MorFamSeqPost,;060525; MorFamFerg,NULL
+        MorFamTelef,;FIGUEIRA DA FOZ; MorFamLocalidade,NULL RECMcodigo,NULL RECMdataIni,NUL
+        L RECMdataValid,NULL RECMdataFim,NULL IsenTaxaCodigo,NULL IsenTaxaDataIni,NULL IsenTaxaDataValid,NULL
+        IsenTaxaDataFim,NULL OutrosCodigo,NULL OutrosDataIni,NULL OutrosDataValid,NULL OutrosDataFim,
+        ;11166550668; NISS,;RUA; MorUtTipoRua,;Colégio; MorUtRua,;40,; MorUtPorta,;5º.;
+        MorUtAndar,NULL MorUtLugar,;3780; MorUtCodPost,;294; Mo
+        rUtSeqPost,;ANADIA; MorUtLocPost,;010317; MorUtFregResid,;231950656;
+        MorUtTelef,NULL MorUtEndEstrang,NULL MorUtRegEstrang,NULL MorUtCidEstrang,NULL MorUtLocEstrang,NULL M
+        orUtCodPostEstrang,NULL MorUtPaisEstrang,NULL MorUtDescPaisEstrang,NULL DataObito,NULL insufEconDataIni, NULL
+        insufEconDataValid, NULL insufEconDataFim,;jjcrib@gmail.com; Email,;9330605
+        91; Telemovel,;2025-11-24T12:36:57.000+00:00; DataAlteracaoRNU, ;Esqº.;
+        MorUtDescTpLado,NULL MorFamDescTpLado FROM DUAL
+    </Identificacao>
+    <SubsistemasPT>select;938991
+        ; EntRespCod,;Condição SNS; EntRespDesc,NULL EntRespNumBenef,;2023-06-17T00:00:00;
+        EntRespDataIni,NULL EntRespDataValid,NULL EntRespDataFim FROM DUAL
+    </SubsistemasPT>
+    <SubsistemasMig></SubsistemasMig>
+    <Moradas>
+        <Principal>RUA Colégio, 40, 5º. Esqº., Malaposta, 3780-294 ANADIA</Principal>
+        <Alternativa></Alternativa>
+    </Moradas>
+    <Beneficios></Beneficios>
+    <OutrosContactos
+    >select;Vacinação COVID-19; NomeContacto,NULL TelefoneContacto,;+351933060591;
+        TelemovelContacto,NULL OutroTipoContacto,NULL NumeroOutroTipoContacto,NULL ObservacoesContacto,NULL E
+        mail FROM DUAL
+    </OutrosContactos>
+</Utente>

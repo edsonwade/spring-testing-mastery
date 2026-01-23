@@ -22,6 +22,13 @@ import java.util.List;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/**
+ * Integration tests for the Coffee Service.
+ * Tests the full stack from Controller to Repository.
+ *
+ * @author vanilson
+ * @version 1.0
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 @AutoConfigureTestEntityManager

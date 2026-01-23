@@ -33,11 +33,9 @@ public class GlobalExceptionHandler {
     @ResponseStatus(BAD_REQUEST)
     public ProblemDetail handleUniquenessException(
             DataIntegrityViolationException exception) {
-        if (!(exception.getCause() instanceof ConstraintViolationException)) {
+        if (!(exception.getCause() instanceof ConstraintViolationException constraintViolation)) {
             return handleAllExceptions(exception).getBody();
         }
-        ConstraintViolationException constraintViolation =
-                (ConstraintViolationException) exception.getCause();
         String message = determineConstraintViolationMessage(
                 constraintViolation.getConstraintName());
         return ProblemDetail.forStatusAndDetail(
@@ -57,7 +55,8 @@ public class GlobalExceptionHandler {
 
         List<ConstraintViolation> errors = exception.getFieldErrors()
                 .stream()
-                .map(violation -> ConstraintViolation.builder()
+                .map(violation -> ConstraintViolation
+                        .builder()
                         .message(violation.getDefaultMessage())
                         .fieldName(violation.getField())
                         .rejectedValue(Objects.isNull(

@@ -15,6 +15,13 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Persistence layer tests for {@link CoffeeRepository}.
+ * Uses DataJpaTest to test with an in-memory H2 database.
+ *
+ * @author vanilson
+ * @version 1.0
+ */
 @DataJpaTest
 public class CoffeeRepositoryTest {
     @Autowired
@@ -36,6 +43,9 @@ public class CoffeeRepositoryTest {
             new Coffee("Coffee 2", 1),
             new Coffee("Coffee 3", 1));
 
+    /**
+     * Preloads test data before each test.
+     */
     @BeforeEach
     void setUp() {
         // Load three coffees into the database
@@ -51,6 +61,9 @@ public class CoffeeRepositoryTest {
         entityManager.flush();
     }
 
+    /**
+     * Cleans up test data after each test.
+     */
     @AfterEach
     void tearDown() {
         // Remove all coffees from the database
@@ -60,6 +73,9 @@ public class CoffeeRepositoryTest {
         coffeeIds.clear();
     }
 
+    /**
+     * Test finding a coffee by its ID.
+     */
     @Test
     void testFindCoffeeById() {
         // Find the coffee by ID
@@ -75,6 +91,9 @@ public class CoffeeRepositoryTest {
         assertEquals(1, foundCoffee.getVersion());
     }
 
+    /**
+     * Test finding a coffee by ID that does not exist.
+     */
     @Test
     void testFindCoffeeByIdNotFound() {
         // Find the coffee by ID
@@ -84,6 +103,9 @@ public class CoffeeRepositoryTest {
         assertNull(foundCoffee);
     }
 
+    /**
+     * Test inserting a new coffee into the repository.
+     */
     @Test
     void testInsertCoffee() {
         // Add a coffee to the database
@@ -107,6 +129,9 @@ public class CoffeeRepositoryTest {
         assertEquals(2, foundCoffeeEM.getVersion());
     }
 
+    /**
+     * Test updating an existing coffee.
+     */
     @Test
     void testUpdateCoffee() {
         // Find the coffee to update
@@ -129,6 +154,9 @@ public class CoffeeRepositoryTest {
         assertEquals(2, updatedCoffee.getVersion());
     }
 
+    /**
+     * Test finding all coffees in the repository.
+     */
     @Test
     void testFindAll() {
         // Find all coffees
@@ -138,6 +166,9 @@ public class CoffeeRepositoryTest {
         assertEquals(3, coffeeList.size());
     }
 
+    /**
+     * Test deleting a coffee from the repository.
+     */
     @Test
     void testDeleteCoffee() {
         // Find the first coffee and verify that it is found
@@ -152,6 +183,9 @@ public class CoffeeRepositoryTest {
         assertFalse(notFoundCoffee.isPresent());
     }
 
+    /**
+     * Test finding coffees by name.
+     */
     @Test
     void testFindCoffeeByName() {
         List<Coffee> found = coffeeRepository.findByName("Coffee 2");
