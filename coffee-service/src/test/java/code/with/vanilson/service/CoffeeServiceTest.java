@@ -61,7 +61,7 @@ public class CoffeeServiceTest {
         List<Coffee> coffees = List.of(new Coffee("Espresso"), new Coffee("Latte"));
         when(repository.findAll()).thenReturn(coffees);
 
-        List<Coffee> result = coffeeService.findAll();
+        List<Coffee> result = coffeeService.findAllCoffees();
 
         assertEquals(2, result.size());
         verify(repository, times(1)).findAll();

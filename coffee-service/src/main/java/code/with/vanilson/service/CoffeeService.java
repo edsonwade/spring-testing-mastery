@@ -14,7 +14,7 @@ public class CoffeeService {
 
     public CoffeeService(CoffeeRepository coffeeRepository) {this.coffeeRepository = coffeeRepository;}
 
-    public List<Coffee> findAll() {
+    public List<Coffee> findAllCoffees() {
         return coffeeRepository.findAll();
     }
 

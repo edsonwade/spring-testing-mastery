@@ -38,7 +38,7 @@ public class CoffeeController {
 
     @GetMapping("/coffees")
     public ResponseEntity<List<Coffee>> getCoffees() {
-        return ResponseEntity.ok().body(coffeeService.findAll());
+        return ResponseEntity.ok().body(coffeeService.findAllCoffees());
     }
 
     @PostMapping("/coffee")

@@ -8,5 +8,5 @@ import java.util.List;
 @Repository
 public interface PatientsRepository extends CrudRepository<Patient, Long> {
 
-    List<Patient> findAll();
+    List<Patient> findAllPatients();
 }
