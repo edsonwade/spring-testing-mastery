@@ -91,7 +91,7 @@ public class CoffeeControllerTest {
         coffeeList.add(new Coffee("Coffee 3"));
 
         // Setup our mock service to return the list
-        when(coffeeService.findAll()).thenReturn(coffeeList);
+        when(coffeeService.findAllCoffees()).thenReturn(coffeeList);
 
         // Invoke the GET /coffees endpoint
         mockMvc.perform(get("/coffees"))

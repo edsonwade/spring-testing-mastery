@@ -19,7 +19,7 @@ public class PatientsService {
     private PatientsRepository patientsRepository;
 
     public List<PatientResponse> getAllPatients() {
-        return patientsRepository.findAll()
+        return patientsRepository.findAllPatients()
                 .stream()
                 .map(PatientResponse::fromEntity)
                 .toList();

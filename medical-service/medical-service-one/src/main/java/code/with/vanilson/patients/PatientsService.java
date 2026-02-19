@@ -1,5 +1,6 @@
 package code.with.vanilson.patients;
 
+import code.with.vanilson.patients.exception.PatientNotFound;
 import lombok.AllArgsConstructor;
 
 import org.springframework.stereotype.Service;
@@ -16,17 +17,17 @@ public class PatientsService {
     private PatientsRepository patientsRepository;
 
     public List<PatientResponse> getAllPatients() {
-        return patientsRepository.findAll().stream()
+        return patientsRepository
+                .findAllPatients()
+                .stream()
                 .map(PatientResponse::fromEntity)
                 .collect(toList());
     }
-
     public PatientResponse getPatientById(Long id) {
         return patientsRepository.findById(id)
                 .map(PatientResponse::fromEntity)
-                .orElseThrow();
+                .orElseThrow(() -> new PatientNotFound("Patient with id " + id + " not found"));
     }
-
     public PatientResponse createPatient(PatientRequest patientRequest) {
         Patient patient = patientsRepository.save(patientRequest.toEntity());
         return fromEntity(patient);
